@@ -8,8 +8,11 @@ public class LibraryService {
     }
 
     /** Returns the copy count after issuing one copy of title. */
-    public static int issueBook(int availableCopies, String title) throws BookUnavailableException {
+     public static int issueBook(int availableCopies, String title) throws BookUnavailableException {
         // Issues one copy of the given title from the catalogue (main branch)
+        if (title == null || title.isBlank()) {
+            throw new IllegalArgumentException("Title must not be empty.");
+        }
         if (availableCopies <= 0) {
             throw new BookUnavailableException("'" + title + "' has no copies available.");
         }
