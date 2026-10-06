@@ -2,10 +2,12 @@ package com.hitms.lms;
 
 public class LibraryService {
 
+    /** Returns the copy count after adding newCopies of a title. */
     public static int addBook(int availableCopies, int newCopies) {
         return availableCopies + newCopies;
     }
 
+    /** Returns the copy count after issuing one copy of title. */
     public static int issueBook(int availableCopies, String title) throws BookUnavailableException {
         // Issues one copy of the given title from the catalogue (main branch)
         if (availableCopies <= 0) {
@@ -14,6 +16,7 @@ public class LibraryService {
         return availableCopies - 1;
     }
 
+    /** Returns the copy count after one copy is returned. */
     public static int returnBook(int availableCopies) {
         return availableCopies + 1;
     }
