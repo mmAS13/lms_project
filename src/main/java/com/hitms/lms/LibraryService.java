@@ -21,6 +21,16 @@ public class LibraryService {
         return availableCopies + 1;
     }
 
+    /** Returns true if the given member id exists in the list of members. */
+    public static boolean findMemberById(int[] memberIds, int id) {
+        for (int memberId : memberIds) {
+            if (memberId == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) throws BookUnavailableException {
         int copies = 2;
         copies = addBook(copies, 3);
