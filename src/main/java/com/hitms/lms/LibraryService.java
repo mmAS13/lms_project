@@ -9,7 +9,8 @@ public class LibraryService {
 
     /** Returns the copy count after issuing one copy of title. */
      public static int issueBook(int availableCopies, String title) throws BookUnavailableException {
-               // Issues one copy of the given title from the catalogue (reworded)
+        // Issues one copy of the given title; throws BookUnavailableException
+        // if no copies are left in the catalogue.
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("Title must not be empty.");
         }
